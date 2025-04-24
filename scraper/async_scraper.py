@@ -2,8 +2,7 @@ import asyncio
 import aiohttp
 
 from time import perf_counter
-from config import TOTAL_REQUESTS_COUNT
-
+from config.scraper_config import TOTAL_REQUESTS_COUNT
 
 async def fetch_data(session, item_no):
     r = await session.get(f"http://127.0.0.1:8000/products/{item_no}")

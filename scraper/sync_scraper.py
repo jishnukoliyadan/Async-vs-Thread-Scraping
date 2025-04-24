@@ -1,6 +1,6 @@
 import requests
 from time import perf_counter
-from config import TOTAL_REQUESTS_COUNT
+from config.scraper_config import TOTAL_REQUESTS_COUNT
 
 start = perf_counter()
 
