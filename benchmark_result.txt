@@ -1,0 +1,42 @@
+sync_scraper.py
+---------------
+Time taken : 82.37712715800001
+Time taken : 82.86115119899995
+Time taken : 82.63185995900005
+Time taken : 82.73114826899996
+Time taken : 81.74346710599991
+Time taken : 81.96354054999995
+Time taken : 82.0549730680001
+Time taken : 81.30401010600008
+Time taken : 81.46016441999996
+Time taken : 81.20796466999991
+Average time took : 82.03354065049998800000
+
+thread_scraper.py
+---------------
+Time taken : 58.409782863000146
+Time taken : 57.82698120500004
+Time taken : 58.39427138700012
+Time taken : 58.08052432299996
+Time taken : 58.30520292799997
+Time taken : 58.32040384100014
+Time taken : 58.45550890699997
+Time taken : 58.00968056399984
+Time taken : 58.50673067699995
+Time taken : 58.61317103200008
+Average time took : 58.29222577270002160000
+
+async_scraper.py
+---------------
+Time taken : 9.278541816000143
+Time taken : 9.455691878999914
+Time taken : 9.233388216000094
+Time taken : 9.258559691999835
+Time taken : 9.263377564000166
+Time taken : 9.132170872000188
+Time taken : 9.435168549000082
+Time taken : 9.334519236000006
+Time taken : 9.132259945999976
+Time taken : 9.304668386000003
+Average time took : 9.28283461560004070000
+

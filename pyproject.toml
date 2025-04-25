@@ -7,6 +7,7 @@ requires-python = ">=3.13.2"
 dependencies = [
     "aiohttp>=3.11.18",
     "fastapi>=0.115.12",
+    "pillow>=11.2.1",
     "requests>=2.32.3",
     "uvicorn>=0.34.2",
 ]

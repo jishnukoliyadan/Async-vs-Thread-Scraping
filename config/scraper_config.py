@@ -1,2 +1,2 @@
 # The maximum number of requests to be sent.
-TOTAL_REQUESTS_COUNT = 3000
+TOTAL_REQUESTS_COUNT = 30000

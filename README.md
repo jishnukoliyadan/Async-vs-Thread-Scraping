@@ -20,13 +20,16 @@ The server endpoints will be hit `TOTAL_REQUESTS_COUNT` times (as defined in `sc
 
 ```bash
 Async-vs-Thread-Scraping/
-├── .gitignore
+├── .gitignore             # Specifies files and directories to be ignored by git
 ├── .python-version        # Specifies Python version to be used
 │
-├── app                    # Local FastAPI demo server code
+├── app
 │   └── server_api.py      # FastAPI app definition and endpoints
 │
-├── config                 # Configuration files for the scraper
+├── benchmark.sh           # Automates running benchmark tests for scrapers
+├── benchmark_result.txt   # Stores benchmark results (time per scraper iteration)
+│
+├── config
 │   └── scraper_config.py  # Stores TOTAL_REQUESTS_COUNT to set the request limit
 │
 ├── LICENSE                # Licensing information
@@ -35,13 +38,18 @@ Async-vs-Thread-Scraping/
 │
 ├── README.md              # Project documentation
 │
-├── scraper                # Scraper logic
+├── scraper
 │   ├── async_scraper.py   # Asynchronous scraping using asyncio and AIOHttp
 │   ├── sync_scraper.py    # Synchronous scraping using for-loop
 │   └── thread_scraper.py  # Threaded scraping using ThreadPoolExecutor
 │
+├── static
+│   └── timer_{0..3}.png   # Images representing benchmark results for scrapers
+│
+├── utils
+│   └── result_images.py   # Generates images from benchmark_result.txt
+│
 └── uv.lock                # uv Lock file for dependencies/environments
-
 ```
 
 ## Installation & Setup Instructions
@@ -100,6 +108,34 @@ The scraper has been divided into three different scripts for comparison: synchr
    ```
 
 These above scripts will send requests to the demo server based on the configuration in `scraper_config.py`, where we can set the total number of requests (`TOTAL_REQUESTS_COUNT`) to be sent to the server.
+
+## Results and Performance
+
+### Performance
+
+- **Total Time Taken** : How long each scraping method took to complete, this is the **Benchmark Parameter**.
+
+- Edit the `TOTAL_REQUESTS_COUNT` variable in `config/scraper_config.py` to set the number of requests you want to benchmark.
+
+- To generate performance benchmark, use the below code.
+
+  ```bash
+  bash benchmark.sh 10 # Read below Note for the meaning of "10"
+  ```
+
+  **Note :**
+
+  - The `10` represents the number of iterations each scraper script (`sync_scraper`, `thread_scraper`, `async_scraper`) will run.
+
+  - If you don't specify a number, the script will default to running the scrapers 5 times.
+
+### Results
+
+| Request Count : ![](static/timer_3.png) |     sync_scraper.py     |    thread_scraper.py    |    async_scraper.py     |
+| :-------------------------------------: | :---------------------: | :---------------------: | :---------------------: |
+|       Average Run Time (seconds)        | ![](static/timer_0.png) | ![](static/timer_1.png) | ![](static/timer_2.png) |
+
+> These results will help determine which scraping approach is most efficient based on the load.
 
 ## License
 
