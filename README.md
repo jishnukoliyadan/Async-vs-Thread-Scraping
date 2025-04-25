@@ -137,6 +137,14 @@ These above scripts will send requests to the demo server based on the configura
 
 > These results will help determine which scraping approach is most efficient based on the load.
 
+## System Information (Test Environment)
+
+The performance results might get influenced by the hardware, software, and network setup used during testing. Below are the key details of the test environment :
+
+![Test Environment Info](https://raw.githubusercontent.com/jishnukoliyadan/Async-vs-Thread-Scraping/refs/heads/main/static/Test_Env_Info.png)
+
+> **Note**: Performance results may vary depending on different system configurations and network conditions.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
