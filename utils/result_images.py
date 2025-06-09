@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 from ast import literal_eval
 from PIL import Image, ImageDraw, ImageFont
 from config.scraper_config import TOTAL_REQUESTS_COUNT
@@ -16,9 +17,9 @@ def create_number_image(number: float, image_num: int) -> None:
     draw = ImageDraw.Draw(image)
 
     try:
-        font = ImageFont.truetype("arial.ttf", 40)
+        font = ImageFont.truetype(Path(__file__).parent / "arial.ttf", 40)
     except IOError:
-        print('errore')
+        print("Error, failed to find 'arial.ttf'")
         font = ImageFont.load_default()
 
     text = str(number)
